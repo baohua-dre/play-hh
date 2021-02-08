@@ -10,7 +10,7 @@
         <dv-decoration-8 :reverse="true" style="width:300px;height:50px;" />
       </div>
       <dv-decoration-10 style="width:90%;height:5px;" class="deco"/>
-      <dv-border-box-1 style="height:500px;">
+      <dv-border-box-1 style="height:450px;">
         <div class="bigcontainer">
             <div class="conLeft">
               <dv-scroll-ranking-board :config="config" style="width:300px;height:400px; " />
@@ -21,7 +21,12 @@
               </dv-border-box-12>
             </div>
             <div class="conRight">
-              <dv-water-level-pond :config="waterConfi" style="width:100px;height:150px" />
+              <div style="padding:20px;display:flex;align-content:flex-start;flex-wrap:wrap;">
+                <dv-water-level-pond :config="waterConfi" style="width:100px;height:150px" />
+                <dv-active-ring-chart :config="confighuan" style="width:200px;height:200px" />
+                <dv-decoration-9 style="width:150px;height:150px;">66%</dv-decoration-9>
+                <dv-decoration-12 style="width:150px;height:150px;" />
+              </div>
             </div>
         </div>
       </dv-border-box-1>
@@ -221,6 +226,36 @@ export default {
           }
         ],
         bgImgSrc: './img/map.jpg'
+      },
+      // 动态环图
+      confighuan:{
+        data: [
+          {
+            name: '周口',
+            value: 55
+          },
+          {
+            name: '南阳',
+            value: 120
+          },
+          {
+            name: '西峡',
+            value: 78
+          },
+          {
+            name: '驻马店',
+            value: 66
+          },
+          {
+            name: '新乡',
+            value: 80
+          }
+        ],
+        lineWidth: 10,
+        digitalFlopStyle: {
+          fontSize: 14,
+          fill: '#fff'
+        }
       }
     }
   },
